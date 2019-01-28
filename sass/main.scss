@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+@import "helper/_mixins";
+@import "helper/_variables";
+@import "helper/_animations";
+@import "components/_buttons";
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: 3.2vw;
+}
+
+h2 {
+  font-size: 4.5vw;
+}
+
+h3 {
+  font-size: 2.2vw;
+}
+
+h4 {
+  font-size: 1.5vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font-family;
+  font-size: 1.2vw;
+  color: $main-color;
+  main {
+    display: grid;
+    grid-template-areas: "hd" "ph" "b" "c" "f";
+    grid-template-rows: 100px 400px auto;
+  }
+}
+
+
+/* header---------------------- ----------------------   ----------------------  */
+
+header {
+  grid-column: 1/-1;
+  z-index: 10;
+  grid-row: 1/2;
+  grid-area: hd;
+  position: fixed;
+  width: 100%;
+  background: $basic-color;
+  border-bottom: 1px solid $line-color;
+  >h1 {
+    position: relative;
+    top: 7%;
+    left: 10%;
+    width: 20%;
+  }
+  nav>ul {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    z-index: 3;
+    li {
+      text-align: center;
+      display: inline;
+      a {
+        @include button-main(15px 25px,
+        1px solid $header-color,
+        $basic-color);
+        @include on-event {
+          color: $basic-color;
+          background: $header-color;
+        }
+      }
+    }
+  }
+}
+
+#active {
+  color: $basic-color;
+  background: $header-color;
+}
+
+
+/* overlay -----------------------------------------------------------------*/
+
+//container
+.container {
+  max-width: 30em;
+  min-width: 40em;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  overflow: visible;
+}
+
+.modal {
+  padding: 4em;
+  margin-bottom: 1.5em;
+  position: relative;
+  top: 0.5em;
+  // z-index: 1;
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(128, 128, 128, 0.7);
+  opacity: 0;
+}
+
+#open:target .modal {
+  opacity: 1;
+  z-index: 10;
+}
+
+#open:target .overlay {
+  opacity: 1;
+  z-index: 5;
+}
+
+.close {
+  float: right;
+  padding: 2%;
+  color: $basic-color;
+}
+
+
+/* form -----------------------------------------------------------------*/
+
+form {
+  background: $basic-color;
+  >h3 {
+    background: $banner-color;
+    padding: 3%;
+    color: $basic-color;
+  }
+  >fieldset {
+    border: none;
+    >label {
+      text-align: left;
+      display: block;
+      padding: 2%;
+      color: $header-color;
+    }
+    >input {
+      display: block;
+      padding: 1.5%;
+      width: 100%;
+      border: 1px solid darken($line-color, 10%);
+      border-radius: 3px;
+      font-family: $main-font-family;
+      margin-bottom: 3%;
+    }
+  }
+  [type=reset] {
+    float: right;
+    width: 20%;
+    @include button-main(12px 20px,
+    1px solid $header-color,
+    $basic-color);
+    @include on-event {
+      color: $basic-color;
+      background: $header-color;
+    }
+  }
+  [type="submit"] {
+    width: 40%;
+    float: left;
+    @include button-main(12px 20px,
+    none,
+    $button-color);
+    @include on-event {
+      background: $header-color;
+    }
+  }
+}
+
+
+/*section with photo***********************************************/
+
+main>section:first-of-type {
+  grid-area: ph;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  background: $footer-bgcolor url(get-base-url() + "f1.jpg") $background-images-position;
+  background-size: cover;
+  padding-top: 5%;
+  >section:first-of-type {
+    >h2 {
+      color: $basic-color;
+      text-align: left;
+      @include center;
+    }
+  }
+}
+
+
+/*section banner  ---------------------- ---------------------- ---------------------- */
+
+main>section:nth-child(3) {
+  grid-area: b;
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  background: $banner-color;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+  -webkit-animation-name: bgchange;
+  -webkit-animation-duration: 8s;
+  animation-name: bgchange;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  >h3 {
+    margin: 0;
+    padding: 0 0 1%;
+    // font-size: $main-font-size * 2.3;
+    color: $basic-color;
+    margin-bottom: 2%;
+  }
+  >.button {
+    width: 10%;
+    margin-bottom: 1%;
+    @include button-main(14px 20px,
+    none,
+    $button-color);
+    @include on-event {
+      background: $header-color;
+    }
+  }
+}
+
+
+/*section with 3 sections ---------------------- ---------------------- ----------------------*/
+
+main>section:nth-child(4) {
+  grid-area: c;
+  grid-column: 1/-1;
+  grid-row: 4/5;
+  text-align: center;
+  @include center;
+  >hr {
+    background-color: $line-color;
+    border: 0 none;
+    height: 1px;
+  }
+  >div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5% 10%;
+  }
+}
+
+main>section:nth-child(4)>div>section>h4 {
+  color: $header-color;
+}
+
+
+/*footer ---------------------- ---------------------- ----------------------*/
+
+footer {
+  grid-area: f;
+  background: $footer-bgcolor;
+  grid-column: 1/-1;
+  grid-row: 5/6;
+  >section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+    >p {
+      font-size: $main-font-size * 0.9;
+      >a {
+        color: $header-color;
+      }
+    }
+  }
+}
+
+
+/* --------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 360px) {
+  body {
+    main {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 60px 200px auto;
+    }
+  }
+  header {
+    height: 60px;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: column wrap;
+    position: relative;
+    right: 60%;
+  }
+  main>header>nav>ul>li>a {
+    padding: 9px 9px;
+    margin: 0 1px;
+  }
+  // =================================================photo 
+  main>section:first-of-type {
+    padding-top: 0;
+    >section:first-of-type {
+      padding: 25px 10px;
+      >h2 {
+        @include center;
+      }
+    }
+  }
+
+// form ------------------------------------------------------------
+ input {
+  font-size: 1.3vw;
+ }
+
+
+ input[type="submit"] {
+     @include button-main(5px 8px,none, $button-color);
+   // display: inline-block;
+    width: 100%;
+    font-size: 1.3vw;
+    margin: 0 5% 1% 0;
+    float: none;
+}
+
+ input[type="reset"] {
+     @include button-main(3px 8px, 1px solid $header-color,$basic-color);
+    // width: 10%;
+    // float: left;
+    // float: none;
+    display: block;
+    margin: 0 5% 1% 0;
+   
+    float: none;
+    width: 100%;
+    font-size: 1.3vw;
+}
+
+  /*section banner */
+  main>section:nth-child(3) {
+    >h3 {
+      margin-bottom: 1%;
+    }
+    .button {
+      padding: 1%;
+      width: 20px;
+    }
+  }
+  /*section with 3 sections ---------------------- ---------------------- ----------------------*/
+  main>section:nth-child(4) {
+    >div {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+  main>footer>section {
+    flex-direction: column;
+  }
+}
+

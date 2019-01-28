@@ -1,0 +1,12 @@
+@import "_variables";
+
+@mixin center(){
+  margin: 0 10%;
+}
+
+
+@mixin on-event{
+      &:hover{
+        @content;
+      }
+}

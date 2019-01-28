@@ -1,0 +1,15 @@
+@mixin button-main($padding, $border, $background){
+              padding: $padding;
+              border-radius: 5px;
+              margin: 4px;
+              border: $border;
+              background: $background;
+             @if $background == $basic-color {
+                @debug $background;
+                 color: $header-color;
+            }
+            @else {
+                 @debug $background;
+                 color: $basic-color;
+    }
+}
