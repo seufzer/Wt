@@ -200,7 +200,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 5%; }
+    padding: 5% 0; }
     footer > section p a {
       color: #d7192f; }
 

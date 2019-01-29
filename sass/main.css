@@ -241,8 +241,8 @@ main > section:nth-child(4) {
   main > section:nth-child(4) > div {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    padding: 5%; }
+    justify-content: space-between;
+    padding: 5% 0; }
 
 main > section:nth-child(4) > div > section > h4 {
   color: #d7192f; }
@@ -258,7 +258,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 5%; }
+    padding: 5% 0; }
     footer > section > p {
       font-size: 0.9em; }
       footer > section > p > a {
@@ -269,10 +269,10 @@ footer {
   body main {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 60px 200px auto; }
+    grid-template-rows: 10em 200px auto; }
 
   header {
-    height: 60px; }
+    height: 10em; }
 
   nav ul {
     display: flex;
