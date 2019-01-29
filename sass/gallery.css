@@ -168,7 +168,7 @@ main > section:nth-child(5) {
 main > section:nth-child(5) > div {
   display: flex;
   flex-direction: row;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   padding-top: 5%;
   padding-bottom: 5%; }
@@ -216,7 +216,6 @@ footer {
 
   nav ul {
     display: flex;
-    flex-wrap: column wrap;
     position: relative;
     right: 60%; }
 

@@ -93,6 +93,9 @@ header {
   color: white;
   background: #d7192f; }
 
+input:hover {
+  border-color: #36b1c9; }
+
 /* overlay -----------------------------------------------------------------*/
 .container {
   max-width: 30em;
@@ -272,7 +275,6 @@ footer {
 
   nav ul {
     display: flex;
-    flex-wrap: column wrap;
     position: relative;
     right: 60%; }
 

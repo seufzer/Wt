@@ -92,6 +92,10 @@ header {
   background: $header-color;
 }
 
+input:hover{
+  border-color: hsl(190, 58%, 50%);
+ 
+}
 
 /* overlay -----------------------------------------------------------------*/
 
@@ -313,7 +317,6 @@ footer {
   }
   nav ul {
     display: flex;
-    flex-wrap: column wrap;
     position: relative;
     right: 60%;
   }
