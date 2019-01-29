@@ -231,6 +231,7 @@ main > section:nth-child(4) {
   grid-area: c;
   grid-column: 1/-1;
   grid-row: 4/5;
+  padding: 5%;
   text-align: center;
   margin: 0 10%; }
   main > section:nth-child(4) > hr {
@@ -241,7 +242,7 @@ main > section:nth-child(4) {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 5% 10%; }
+    padding: 5%; }
 
 main > section:nth-child(4) > div > section > h4 {
   color: #d7192f; }
@@ -329,8 +330,7 @@ footer {
 
   /*section with 3 sections ---------------------- ---------------------- ----------------------*/
   main > section:nth-child(4) > div {
-    flex-direction: column;
-    padding: 0; }
+    flex-direction: column; }
 
   main > footer > section {
     flex-direction: column; } }
