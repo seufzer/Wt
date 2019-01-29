@@ -30,7 +30,7 @@ h4 {
   font-weight: lighter; }
 
 h1 {
-  font-size: 3.2vw; }
+  font-size: 3vw; }
 
 h2 {
   font-size: 4.5vw; }
@@ -50,7 +50,7 @@ body {
   body > main {
     display: grid;
     grid-template-areas: "hd" "t" "b" "g" "r" "f";
-    grid-template-rows: 100px 400px auto; }
+    grid-template-rows: 80px 400px auto; }
 
 /* header---------------------- ----------------------   ----------------------  */
 header {
@@ -58,6 +58,7 @@ header {
   z-index: 10;
   grid-row: 1/2;
   grid-area: hd;
+  height: 80px;
   position: fixed;
   width: 100%;
   background: white;
@@ -131,11 +132,13 @@ main > section:nth-child(4) {
     text-align: center; }
 
 main > section:nth-child(4) > div {
+  margin: 0 10%;
   background: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px; }
+  padding: 10px;
+  margin-bottom: 5%; }
 
 main > section:nth-child(4) > div > img {
   border-radius: 5px;
@@ -223,8 +226,7 @@ footer {
 
   main > section:nth-child(4) > div {
     margin: 0 10%;
-    align-items: center;
-    margin-bottom: 5%; }
+    align-items: center; }
 
   /*rewievs -------------------------------------------------------*/
   main > section:nth-child(5) > div {
@@ -235,9 +237,10 @@ footer {
     width: 100%; }
     main > section:nth-child(5) > div > article > p {
       font-size: 0.8em;
-      padding: 1%; } }
-/*footer -------------------------------------------------------*/
-main > footer > section {
-  flex-direction: column; }
+      padding: 1%; }
+
+  /*footer -------------------------------------------------------*/
+  main > footer > section {
+    flex-direction: column; } }
 
 /*# sourceMappingURL=gallery.css.map */

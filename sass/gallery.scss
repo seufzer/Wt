@@ -17,7 +17,7 @@ h4 {
 }
 
 h1 {
-  font-size: 3.2vw;
+  font-size: 3vw;
 }
 
 h2 {
@@ -41,7 +41,7 @@ body {
   >main {
     display: grid;
     grid-template-areas: "hd" "t" "b" "g" "r" "f";
-    grid-template-rows: 100px 400px auto;
+    grid-template-rows: 80px 400px auto;
   }
 }
 
@@ -53,6 +53,7 @@ header {
   z-index: 10;
   grid-row: 1/2;
   grid-area: hd;
+  height: 80px;
   position: fixed;
   width: 100%;
   background: $basic-color;
@@ -141,12 +142,13 @@ main>section:nth-child(4) {
 }
 
 main>section:nth-child(4)>div {
+  @include center;
   background: $basic-color;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
-  // margin-bottom: 15%;
+  margin-bottom: 5%;
 }
 
 main>section:nth-child(4)>div>img {
@@ -259,12 +261,9 @@ footer {
   main>section:nth-child(4)>div {
     @include center;
     align-items: center;
-    margin-bottom: 5%;
+    
   }
 
-
-
-  
 /*rewievs -------------------------------------------------------*/
 
   main>section:nth-child(5)>div {
@@ -279,19 +278,11 @@ footer {
       padding: 1%;
     }
   }
-}
-
-
 
 /*footer -------------------------------------------------------*/
 main>footer>section {
     flex-direction: column;
+  }
 }
 
-// @media (min-width: 800px) {
-//   main>section:nth-child(4)>div {
-//     margin: 0 200px;
-//     margin-bottom: 60px;
-//   }
-// }
 
